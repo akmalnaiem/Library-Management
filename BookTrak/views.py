@@ -294,7 +294,7 @@ class Checkout(APIView):
 
 
 
-# # CBV to show saved books--
+# CBV to show saved books--
 # class SavedBooks(generics.ListAPIView):
 #     permission_classes = [IsCustomer]
 #     serializer_class = BookSerializer
