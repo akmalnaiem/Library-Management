@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "881870d7-3226-470e-bd90-dbb4e1023e87",
+		"name": "Library Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46689863"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Registration",
+					"item": [
+						{
+							"name": "Librarian Registration",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"librarian1\",\r\n    \"email\": \"lib@library.com\",\r\n    \"password\": \"libpass123\",\r\n    \"confirm_password\": \"libpass123\",\r\n    \"user_type\": \"librarian\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/registration/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"registration",
+										""
+									]
+								},
+								"description": "Endpoint for Registration as Librarian."
+							},
+							"response": []
+						},
+						{
+							"name": "Customer Registration",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"testcustomer\",\r\n    \"email\": \"customer@test.com\",\r\n    \"password\": \"customer123\",\r\n    \"confirm_password\": \"customer123\",\r\n    \"user_type\": \"customer\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/registration/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"registration",
+										""
+									]
+								},
+								"description": "Endpoint for Registration as Customer."
+							},
+							"response": []
+						}
+					],
+					"description": "```\nContains registration endpoints for different user types.\nAvailable Registration APIs:\n• Librarian Registration - For creating librarian accounts\n• Customer Registration - For creating customer accounts\n\n ```"
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Librarian Login",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"librarian1\",\r\n    \"password\": \"libpass123\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/login/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								},
+								"description": "Endpoint for Login as Librarian."
+							},
+							"response": []
+						},
+						{
+							"name": "Customer Login",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"testcustomer\",\r\n    \"password\": \"customer123\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/login/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								},
+								"description": "Endpoint for Login as Customer."
+							},
+							"response": []
+						}
+					],
+					"description": "```\nContains login endpoints for different user types.\nAvailable Login APIs:\n• Librarian Login - For login as librarian account\n• Customer Login - For login as customer account\n\n ```"
+				},
+				{
+					"name": "Role Verification",
+					"item": [
+						{
+							"name": "Librarian Verification",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token 651eed3aa8fd5afa0579f4e3f009866f65f2e154",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/librarian/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"librarian",
+										""
+									]
+								},
+								"description": "Endpoint to verify Librarian access."
+							},
+							"response": []
+						},
+						{
+							"name": "Customer Verification",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token 3187999dc096fd376871a47b7d136da76b5e9bff",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/customer/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"customer",
+										""
+									]
+								},
+								"description": "Endpoint to verify Customer access."
+							},
+							"response": []
+						}
+					],
+					"description": "```\nThis folder contains test endpoints to verify that the role-based permission system is working correctly. \nThese endpoints demonstrate that librarians and customers can only access their respective authorized endpoints.\n\n ```"
+				}
+			],
+			"description": "Contain endpoints for Registration/Login/Role Verification."
+		},
+		{
+			"name": "Librarian Actions",
+			"item": [
+				{
+					"name": "Add Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 651eed3aa8fd5afa0579f4e3f009866f65f2e154",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Animal Farm\",\r\n    \"author\": \"George Orwell\",\r\n    \"isbn\": \"9780451526342\",\r\n    \"price\": 8.75,\r\n    \"times_issued\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/librarian/add-books/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"librarian",
+								"add-books",
+								""
+							]
+						},
+						"description": "Endpoint for adding book by librarian."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 651eed3aa8fd5afa0579f4e3f009866f65f2e154",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/librarian/delete-books/6/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"librarian",
+								"delete-books",
+								"6",
+								""
+							]
+						},
+						"description": "Endpoint for deleting book by librarian."
+					},
+					"response": []
+				},
+				{
+					"name": "Book-Report",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 651eed3aa8fd5afa0579f4e3f009866f65f2e154",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/librarian/report/?filter=most_issued",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"librarian",
+								"report",
+								""
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "most_issued"
+								}
+							]
+						},
+						"description": "Endpoint for librarian to see book report by filter \"most_issued\", \"least_issued\", \"author\"."
+					},
+					"response": []
+				}
+			],
+			"description": "Contain endpoints for Librarian Action-  \n\\- Add Book  \n\\- Delete Book  \n\\- Book-Report"
+		},
+		{
+			"name": "Customer Actions",
+			"item": [
+				{
+					"name": "Browse Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 3187999dc096fd376871a47b7d136da76b5e9bff",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/customer/browse-book/?filter=most_issued",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"customer",
+								"browse-book",
+								""
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "most_issued"
+								}
+							]
+						},
+						"description": "Endpoint for customer to browse book by filter \"most_issued\", \"least_issued\", \"author\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Save for Later",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 3187999dc096fd376871a47b7d136da76b5e9bff",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_id\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/customer/save-book/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"customer",
+								"save-book",
+								""
+							]
+						},
+						"description": "Endpoint for customer to save book for later."
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 3187999dc096fd376871a47b7d136da76b5e9bff",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_id\": 9\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/customer/add-to-cart/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"customer",
+								"add-to-cart",
+								""
+							]
+						},
+						"description": "Endpoint for customer to add book to cart."
+					},
+					"response": []
+				},
+				{
+					"name": "Remove from Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 3187999dc096fd376871a47b7d136da76b5e9bff",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_id\": 9\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/customer/remove-from-cart/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"customer",
+								"remove-from-cart",
+								""
+							]
+						},
+						"description": "Endpoint for customer to remove book from cart."
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 3187999dc096fd376871a47b7d136da76b5e9bff",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"books_to_issue\": [8]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/customer/checkout/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"customer",
+								"checkout",
+								""
+							]
+						},
+						"description": "Endpoint for customer to checkout."
+					},
+					"response": []
+				}
+			],
+			"description": "Contain endpoints for Customer Action-  \n\\- Browse Books\n\n\\- Save Later\n\n\\- Add Cart\n\n\\-Checkout"
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
