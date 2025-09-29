@@ -70,8 +70,43 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
-The API will be available at:  
- `https://library-management-famh.onrender.com/`
+
+## Base URL 
+ `https://library-management-famh.onrender.com`
+
+
+## Endpoints
+
+### Authentication
+- **POST** `/api/registration/` → User Registration  
+- **POST** `/api/login/` → User Login  
+
+### Librarian
+- **GET** `/api/librarian/` → Librarian Panel   
+- **POST** `/api/librarian/add-books/` → Add a new book  
+- **DELETE** `/api/librarian/delete-books/<id>/` → Delete a book by ID  
+- **GET** `/api/librarian/report/` → Get book issue report  
+
+### Customer 
+- **GET** `/api/customer/` → Customer Panel
+- **GET** `/api/customer/browse-book/` → Browse available books  
+- **POST** `/api/customer/save-book/` → Save a book for later  
+- **POST** `/api/customer/add-to-cart/` → Add a book to cart  
+- **DELETE** `/api/customer/remove-from-cart/` → Remove a book from cart  
+- **POST** `/api/customer/checkout/` → Checkout books from cart  
+
+
+
+## Admin Panel Access
+
+You can access the Django admin panel here:  
+ [https://library-management-famh.onrender.com/admin/](https://library-management-famh.onrender.com/admin/)
+
+
+### Superuser Credentials
+- **Username:** akki  
+- **Password:** akki@2501
+
 
 ---
 
