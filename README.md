@@ -103,11 +103,6 @@ You can access the Django admin panel here:
  [https://library-management-famh.onrender.com/admin/](https://library-management-famh.onrender.com/admin/)
 
 
-### Superuser Credentials
-- **Username:** akki  
-- **Password:** akki@2501
-
-
 ---
 
 ##  Authentication
